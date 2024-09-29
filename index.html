@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #img {
+        border-radius: 20px;
+      }
+      #fonte {
+        font-family: "Poppins", sans-serif;
+      }
+
+      @media (max-width: 576px) {
+        .selfie-img {
+          width: 200px;
+          height: auto;
+        }
+      }
+
+      .btn-green {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: white;
+      }
+
+      .btn-green:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+      }
+
+      .btn-green-outline {
+        border-color: #28a745;
+        color: #28a745;
+      }
+
+      .btn-green-outline:hover {
+        background-color: #28a745;
+        color: white;
+        border-color: #28a745;
+      }
+    </style>
+    <title>Animais desaparecidos</title>
+  </head>
+  <body id="fonte">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="images/3opcao logo.jpg"
+              alt="Logo"
+              width="70"
+              height="70"
+              id="img"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Fórum</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold text-success" href="#">Meus Pets</a>
+              </li>
+            </ul>
+            <form class="d-flex me-3 py-2" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar seu pet"
+                aria-label="Search"
+              />
+              <button class="btn btn-green-outline" type="submit">
+                Buscar
+              </button>
+            </form>
+
+            <span class="navbar-text"> "Encontre seus amigos de volta" </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="m-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="list-group bg-dark">
+              <a
+                href="#"
+                class="list-group-item list-group-item-action text-dark"
+                >Região 1</a
+              >
+              <a
+                href="#"
+                class="list-group-item list-group-item-action text-dark"
+                >Região 2</a
+              >
+              <a
+                href="#"
+                class="list-group-item list-group-item-action text-dark"
+                >Região 3</a
+              >
+              <a
+                href="#"
+                class="list-group-item list-group-item-action text-dark"
+                >Região 4</a
+              >
+              <a
+                href="#"
+                class="list-group-item list-group-item-action text-dark"
+                >Região 5</a
+              >
+              <a
+                href="#"
+                class="list-group-item list-group-item-action text-dark"
+                >Região 6</a
+              >
+            </div>
+
+            <div class="py-4 text-center">
+              <img
+                src="images/selfie-animais.jpeg"
+                alt="Selfie"
+                class="img-fluid rounded border border-3 border-success-subtle selfie-img"
+                width="300"
+                height="300"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-9 col-md-8 py-3">
+            <h4
+              class="border-bottom border-dark-subtle text-secondary-emphasis p-1 border-3"
+            >
+              Regiões Sugeridas
+            </h4>
+            <div
+              id="regionCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="https://via.placeholder.com/800x400.png?text=Região+1"
+                    class="d-block w-100"
+                    alt="Região 1"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Região 1</h5>
+                    <p>Descrição da Região 1.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://via.placeholder.com/800x400.png?text=Região+2"
+                    class="d-block w-100"
+                    alt="Região 2"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Região 2</h5>
+                    <p>Descrição da Região 2.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://via.placeholder.com/800x400.png?text=Região+3"
+                    class="d-block w-100"
+                    alt="Região 3"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Região 3</h5>
+                    <p>Descrição da Região 3.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://via.placeholder.com/800x400.png?text=Região+4"
+                    class="d-block w-100"
+                    alt="Região 4"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Região 4</h5>
+                    <p>Descrição da Região 4.</p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#regionCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#regionCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
+            <div class="mt-5">
+              <h4
+                class="border-bottom border-dark-subtle text-secondary-emphasis p-1 border-3"
+              >
+                Adicione seu pet
+              </h4>
+              <div class="mt-3 text-center">
+                <a href="cadastro_pet.html" class="btn btn-green">
+                  Cadastrar Pet
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light text-center p-4 mt-4">
+      <div class="container">
+        <p class="mb-1">Encontre animais desaparecidos na sua região.</p>
+        <small>&copy; 2024 Todos os direitos reservados | PetFinder</small>
+      </div>
+    </footer>
+  </body>
+</html>
