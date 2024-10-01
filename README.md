@@ -13,6 +13,8 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 - **Menu de Regiões**: Uma barra lateral com links rápidos para diferentes regiões da cidade.
 - **Cadastro de Pets**: Um botão para redirecionar os usuários à página de cadastro, permitindo que adicionem informações sobre seus animais desaparecidos.
 - **Busca de Animais**: Campo de pesquisa para buscar informações diretamente no site.
+- **Páginas de Cadastro**: Novas páginas foram adicionadas para permitir o cadastro de cães e gatos.
+- **Modelo de Panfleto**: Uma página específica para baixar um modelo de panfleto para ajudar na divulgação de pets perdidos.
 
 ## Tecnologias Utilizadas
 
