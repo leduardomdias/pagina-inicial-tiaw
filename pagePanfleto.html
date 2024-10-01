@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Baixar Panfleto - PetFinder</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      .content {
+        margin-top: 50px;
+      }
+      .card {
+        margin-top: 30px;
+        border: 1px solid gray;
+      }
+      .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      .footer p {
+        margin: 0;
+        text-align: center;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .flex-grow-1 {
+        flex-grow: 1;
+      }
+      .navbar-nav {
+        margin-right: 50px;
+      }
+      .nav-link-home {
+        color: #28a745 !important;
+        font-weight: bold;
+      }
+      .image-card {
+        padding: 0;
+      }
+      .image-card img {
+        width: auto;
+        height: 250px;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      .image-container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img
+          src="images/Logo-do-site.png"
+          alt="Logo"
+          width="80"
+          height="80"
+          id="img"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link px-2 nav-link-home" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2" href="#">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2" href="#">Fórum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2" href="#">Meus Pets</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container content flex-grow-1">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Baixe o Panfleto</h5>
+              <p class="card-text">
+                Nesta seção do site, você poderá baixar um panfleto pré-pronto
+                para imprimir e colocar nas ruas. Esse panfleto ajudará a
+                divulgar a busca pelo seu pet perdido. Basta clicar no botão
+                abaixo para fazer o download e imprimi-lo em casa. Quanto mais
+                panfletos você distribuir, maiores são as chances de encontrar
+                seu amigo!
+              </p>
+              <a href="#" class="btn btn-primary">Baixar Panfleto</a>
+            </div>
+          </div>
+
+          <div class="image-card">
+            <div class="card-body image-container">
+              <img src="images/panfletoLost.jpeg" alt="Imagem do Panfleto" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/400x300.png?text=Modelo+de+Panfleto"
+              alt="Modelo de Panfleto"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Modelo de Panfleto</h5>
+              <p class="card-text">
+                Veja um exemplo de como o panfleto pode parecer. Use-o para
+                adicionar informações sobre o seu pet desaparecido.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="container">
+        <p>© 2024 PetFinder. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
