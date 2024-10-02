@@ -1,4 +1,4 @@
-# FindPet - Página Inicial
+# FindPet - Páginas WebSite
 
 ## Descrição
 
@@ -26,6 +26,8 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 - `login.html`: Página de login para usuários registrados.
 - `cadastro.html`: Página de cadastro de novos usuários.
 - `cadastrarPet.html`: Formulário para cadastrar animais desaparecidos.
+- `pageProdutos.html`: Página dos produtos dos site.
+- `paginaDosPets.html`: Página que mostra as informações dos pets.
 
 ## Tecnologias Utilizadas
 
