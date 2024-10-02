@@ -1,49 +1,43 @@
-# PetFinder - Página Inicial
+# FindPet - Página Inicial
 
 ## Descrição
 
-**PetFinder** é um projeto focado em ajudar pessoas a encontrarem seus animais desaparecidos com mais facilidade. O objetivo principal deste portal é conectar donos de pets e pessoas que possam ter encontrado animais perdidos.
+**PetFinder** é um projeto focado em ajudar pessoas a encontrarem seus animais desaparecidos com mais facilidade. O objetivo principal deste portal é conectar donos de pets com pessoas que possam ter encontrado animais perdidos.
 
-Esta página inicial oferece uma introdução ao site, onde o usuário pode navegar pelas regiões, pesquisar por animais desaparecidos, e ainda ter acesso a um formulário para cadastrar seu pet.
+Esta página inicial oferece uma introdução ao site, onde o usuário pode navegar pelas regiões, pesquisar por animais desaparecidos, cadastrar seu pet, e explorar novos recursos como a exposição de produtos.
 
 ## Funcionalidades
 
-- **Menu de Navegação**: Inclui links para as seções principais, como _Home_, _Sobre_, _Fórum_, e _Meus Pets_.
-- **Carrossel de Regiões**: Um carrossel interativo que exibe imagens e descrições de regiões sugeridas para facilitar a busca por animais desaparecidos em áreas específicas.
+- **Menu de Navegação**: Inclui links para as seções principais, como _Home_, _Sobre_, _Fórum_, _Meus Pets_.
+- **Carrossel de Regiões**: Exibe imagens e descrições de regiões sugeridas para facilitar a busca de animais desaparecidos.
 - **Menu de Regiões**: Uma barra lateral com links rápidos para diferentes regiões da cidade.
-- **Cadastro de Pets**: Um botão para redirecionar os usuários à página de cadastro, permitindo que adicionem informações sobre seus animais desaparecidos.
-- **Busca de Animais**: Campo de pesquisa para buscar informações diretamente no site.
-- **Páginas de Cadastro**: Novas páginas foram adicionadas para permitir o cadastro de cães e gatos.
-- **Modelo de Panfleto**: Uma página específica para baixar um modelo de panfleto para ajudar na divulgação de pets perdidos.
+- **Cadastro de Pets**: Redireciona à página de cadastro para adicionar informações sobre pets desaparecidos.
+- **Busca de Animais**: Campo de pesquisa para encontrar animais no banco de dados.
+- **Exposição de Produtos**: Espaço dedicado à venda de produtos relacionados a pets.
+- **Página de Regiões**: Navegação fácil para páginas específicas de regiões, acessada por botão destacado.
+- **Páginas de Cadastro**: Para registrar informações de cães e gatos desaparecidos.
+- **Página de Login e Cadastro de Usuários**: Para acessar e gerenciar informações de animais cadastrados.
+- **Modelo de Panfleto**: Página para baixar um modelo de panfleto personalizado para divulgar pets desaparecidos.
+
+## Páginas Disponíveis
+
+- `index.html`: Página inicial do projeto.
+- `regioes.html`: Lista regiões para facilitar a busca por pets desaparecidos.
+- `login.html`: Página de login para usuários registrados.
+- `cadastro.html`: Página de cadastro de novos usuários.
+- `cadastrarPet.html`: Formulário para cadastrar animais desaparecidos.
+- `produtos.html`: Página dedicada à exposição e compra de produtos para pets.
 
 ## Tecnologias Utilizadas
 
 - **HTML5**: Estruturação da página.
 - **CSS3** (via Bootstrap): Estilização responsiva e design moderno.
-- **Bootstrap 5**: Para tornar o layout responsivo e otimizar a experiência de navegação.
-- **JavaScript**: (Previsto para uso em funcionalidades dinâmicas futuras)
-
-## Próximos Passos
-
-Esta é apenas a página inicial do projeto. As próximas etapas incluirão o desenvolvimento das seguintes funcionalidades:
-
-- Fórum de discussão para donos de pets.
-- Banco de dados para armazenar informações de pets cadastrados.
-- Fórum dos Pets
+- **Bootstrap 5**: Framework CSS para design responsivo.
+- **JavaScript**: (Previsto para uso em funcionalidades dinâmicas futuras).
 
 ## Como Usar
 
-Para acessar o site e testar as funcionalidades disponíveis até o momento:
-
-1. Clone este repositório em sua máquina local.
-2. Abra o arquivo `index.html` em seu navegador.
-
-### Futuras Implementações
-
-- Integração com APIs para localizar e compartilhar informações de animais.
-- Sistema de login para que os donos acompanhem seus pets cadastrados.
-- Funções interativas de mapeamento de localização.
-
----
-
-© 2024 **PetFinder** - Todos os direitos reservados.
+1. Clone este repositório em sua máquina local:
+   ```bash
+   git clone https://github.com/seu-usuario/petfinder.git
+   ```
