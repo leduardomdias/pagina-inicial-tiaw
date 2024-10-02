@@ -20,7 +20,19 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <style>
+      .card {
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
       #img {
         border-radius: 20px;
       }
@@ -55,6 +67,22 @@
         background-color: #28a745;
         color: white;
         border-color: #28a745;
+      }
+
+      .btn-light-gray {
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+        color: #28a745;
+      }
+
+      .btn-light-gray:hover {
+        background-color: #e2e6ea;
+        border-color: #dae0e5;
+      }
+
+      .card-img-top {
+        height: 280px;
+        object-fit: cover;
       }
     </style>
     <title>Animais desaparecidos.</title>
@@ -99,6 +127,10 @@
               <li class="nav-item">
                 <a class="nav-link fw-bold text-success" href="#">Meus Pets</a>
               </li>
+              <li class="nav-item d-flex align-items-center ms-4">
+                <i class="bi bi-person-circle fs-4 text-success"></i>
+                <span class="ms-2 px-2">Nome do Usuário</span>
+              </li>
             </ul>
             <form class="d-flex me-3 py-2" role="search">
               <input
@@ -112,7 +144,15 @@
               </button>
             </form>
 
-            <span class="navbar-text"> "Encontre seus amigos de volta" </span>
+            <div class="d-flex flex-column align-items-center">
+              <span class="navbar-text mb-2"
+                >"Encontre seus amigos de volta"</span
+              >
+              <div>
+                <a href="login.html" class="btn btn-light-gray me-2">Login</a>
+                <a href="cadastro.html" class="btn btn-green">Cadastre-se</a>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -249,6 +289,16 @@
               </button>
             </div>
 
+            <div class="text-center mt-3">
+              <a
+                href="regioes.html"
+                class="btn btn-light-gray border-1 border-success"
+                style="color: #28a745"
+              >
+                Mais regiões
+              </a>
+            </div>
+
             <div class="mt-5">
               <h4
                 class="border-bottom border-dark-subtle text-secondary-emphasis p-1 border-3"
@@ -272,10 +322,10 @@
           Nosso Produtos
         </h4>
         <div class="row">
-          <div class="col-md-4 py-1">
+          <div class="col-md-4 py-3">
             <div class="card h-100">
               <img
-                src="https://via.placeholder.com/300x200.png?text=Produto+1"
+                src="images/caoColeira.jpeg"
                 class="card-img-top"
                 alt="Produto 1"
               />
@@ -292,7 +342,7 @@
           <div class="col-md-4 py-3">
             <div class="card h-100">
               <img
-                src="https://via.placeholder.com/300x200.png?text=Produto+2"
+                src="images/gatoColeira.jpeg"
                 class="card-img-top"
                 alt="Produto 2"
               />
@@ -308,7 +358,7 @@
           <div class="col-md-4 py-3">
             <div class="card h-100">
               <img
-                src="https://via.placeholder.com/300x200.png?text=Produto+3"
+                src="images/papagaio.jpeg"
                 class="card-img-top"
                 alt="Produto 3"
               />
