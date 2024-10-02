@@ -26,7 +26,6 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 - `login.html`: Página de login para usuários registrados.
 - `cadastro.html`: Página de cadastro de novos usuários.
 - `cadastrarPet.html`: Formulário para cadastrar animais desaparecidos.
-- `produtos.html`: Página dedicada à exposição e compra de produtos para pets.
 
 ## Tecnologias Utilizadas
 
@@ -39,5 +38,5 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 
 1. Clone este repositório em sua máquina local:
    ```bash
-   git clone https://github.com/seu-usuario/petfinder.git
+   git clone https://github.com/marquesDevvv/pagina-inicial-tiaw.git
    ```
