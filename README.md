@@ -43,30 +43,30 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 
 Prepare-se para a jornada de encontrar seu pet! Aqui está o passo a passo:
 
-````bash
+```bash
 1. Clone o Repositório: Entre na missão e traga o projeto para sua máquina local!
-   ```bash
+
    git clone https://github.com/marquesDevvv/pagina-inicial-tiaw.git
-   ```
-````
 
-````bash
+```
+
+```bash
 2. Navegue até o Diretório: Avance até o seu novo tesouro digital.
-   ```bash
+
    cd pagina-inicial-tiaw
-   ```
-````
 
-````bash
+```
+
+```bash
 3. Instale o JSON Server: Se ainda não tiver, é hora de equipar-se!
-   ```bash
-   npm install -g json-server
-   ```
-````
 
-````bash
+   npm install -g json-server
+
+```
+
+```bash
 4. Crie um Arquivo db.json: Monte seu banco de dados de animais! Aqui está um exemplo para começar:
-   ```bash
+
    {
   "animais": [
     {
@@ -87,17 +87,18 @@ Prepare-se para a jornada de encontrar seu pet! Aqui está o passo a passo:
     }
   ]
 }
+
 ```
-````
 
-````bash
-5. Inicie o JSON Server: Dê vida ao seu servidor!
-   ```bash
-   json-server --watch db.json
-   ```
-````
-
-````bash
 ```bash
+5. Inicie o JSON Server: Dê vida ao seu servidor!
+
+   json-server --watch db.json
+
+```
+
+```bash
+
 6. Abra o index.html: E voilà! Acesse seu site e comece a busca por pets desaparecidos!
-````
+
+```
