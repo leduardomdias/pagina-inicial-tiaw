@@ -75,7 +75,8 @@ Prepare-se para a jornada de encontrar seu pet! Aqui está o passo a passo:
       "tipo": "Cachorro",
       "idade": "2 anos",
       "descricao": "Cachorro amigável.",
-      "imagem": "rex.png"
+      "imagem": "rex.png",
+      "regiao": "Buritis"
     },
     {
       "id": 2,
@@ -83,7 +84,8 @@ Prepare-se para a jornada de encontrar seu pet! Aqui está o passo a passo:
       "tipo": "Gato",
       "idade": "1 ano",
       "descricao": "Gato curioso.",
-      "imagem": "mia.png"
+      "imagem": "mia.png",
+      "regiao": "Funcionários"
     }
   ]
 }
