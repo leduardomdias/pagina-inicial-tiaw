@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" href="images/iconeLogo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      main {
+        flex: 1;
+        padding-bottom: 100px;
+      }
+
+      footer {
+        background-color: #343a40;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .pets-section {
+        margin-top: 40px;
+      }
+
+      .pets-section h2 {
+        margin-bottom: 20px;
+      }
+
+      .card {
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+    </style>
+    <title>Meu Perfil - FindPet</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="images/logo_findpet.png"
+              alt="Logo"
+              width="50"
+              height="50"
+              id="img"
+              class="m-2 mx-2"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Fórum</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold text-success" href="pets.html"
+                  >Meus Pets</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mt-5">
+      <div class="profile-header row text-center">
+        <div class="col-md-4 d-flex flex-column align-items-center">
+          <div class="profile-img">
+            <img
+              src="https://via.placeholder.com/200x200.png"
+              alt="Foto do Usuário"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="col-md-8 profile-info">
+          <h1>Nome do Usuário</h1>
+          <p><strong>Idade:</strong> 30 anos</p>
+          <p>
+            <strong>Descrição:</strong> Amante dos animais, sempre à procura de
+            ajudar a encontrar pets desaparecidos.
+          </p>
+          <p><strong>Localização:</strong> Belo Horizonte, MG</p>
+          <p><strong>Email:</strong> usuario@email.com</p>
+        </div>
+      </div>
+
+      <div class="pets-section">
+        <h2>Pets Registrados</h2>
+        <div class="row" id="tabela-pets"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="mb-1">Encontre animais desaparecidos na sua região.</p>
+        <small>&copy; 2024 Todos os direitos reservados | PetFinder</small>
+      </div>
+    </footer>
+
+    <script>
+      function carregarPets() {
+        fetch("http://localhost:3000/animais")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Erro ao carregar pets: " + response.statusText);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const tabela = document.getElementById("tabela-pets");
+            tabela.innerHTML = "";
+
+            data.forEach((pet) => {
+              const coluna = document.createElement("div");
+              coluna.className = "col-lg-4 col-md-6 mb-4";
+              coluna.innerHTML = `
+                            <div class="card">
+                                <img src="${
+                                  pet.imagem || "images/dog-placeholder.png"
+                                }" class="card-img-top" alt="Foto do Pet" />
+                                <div class="card-body">
+                                    <h5 class="card-title">${pet.nome}</h5>
+                                    <p class="card-text">Tipo: ${pet.tipo}</p>
+                                    <p class="card-text">Idade: ${pet.idade}</p>
+                                    <p class="card-text">${pet.descricao}</p>
+                                    <button class="btn btn-danger" onclick="deletarPet(${
+                                      pet.id
+                                    })">Excluir</button>
+                                </div>
+                            </div>
+                        `;
+              tabela.appendChild(coluna);
+            });
+          })
+          .catch((error) => console.error("Erro ao carregar pets:", error));
+      }
+
+      function deletarPet(id) {
+        fetch(`http://localhost:3000/animais/${id}`, {
+          method: "DELETE",
+        })
+          .then(() => {
+            console.log("Pet excluído com sucesso!");
+            carregarPets();
+          })
+          .catch((error) => console.error("Erro ao excluir pet:", error));
+      }
+
+      window.onload = carregarPets;
+    </script>
+  </body>
+</html>

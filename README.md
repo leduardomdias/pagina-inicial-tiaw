@@ -2,7 +2,7 @@
 
 ## Descrição
 
-**PetFinder** é um projeto focado em ajudar pessoas a encontrarem seus animais desaparecidos com mais facilidade. O objetivo principal deste portal é conectar donos de pets com pessoas que possam ter encontrado animais perdidos.
+**FindPet** é um projeto focado em ajudar pessoas a encontrarem seus animais desaparecidos com mais facilidade. O objetivo principal deste portal é conectar donos de pets com pessoas que possam ter encontrado animais perdidos.
 
 Esta página inicial oferece uma introdução ao site, onde o usuário pode navegar pelas regiões, pesquisar por animais desaparecidos, cadastrar seu pet, e explorar novos recursos como a exposição de produtos.
 
@@ -18,6 +18,8 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 - **Páginas de Cadastro**: Para registrar informações de cães e gatos desaparecidos.
 - **Página de Login e Cadastro de Usuários**: Para acessar e gerenciar informações de animais cadastrados.
 - **Modelo de Panfleto**: Página para baixar um modelo de panfleto personalizado para divulgar pets desaparecidos.
+- **Exibição de Animais Cadastrados**: Página que apresenta todos os animais cadastrados, permitindo visualização e exclusão de registros.
+- **Suporte para Imagem por URL**: Opção para cadastrar pets utilizando imagens através de URL, além do upload de arquivos.
 
 ## Páginas Disponíveis
 
@@ -26,8 +28,9 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 - `login.html`: Página de login para usuários registrados.
 - `cadastro.html`: Página de cadastro de novos usuários.
 - `cadastrarPet.html`: Formulário para cadastrar animais desaparecidos.
-- `pageProdutos.html`: Página dos produtos dos site.
-- `paginaDosPets.html`: Página que mostra as informações dos pets.
+- `pets.html`: Página que mostra todos os pets cadastrados.
+- `perfilDoUsuario.html`: Página com as informações do perfil do usuário e seus pets cadastrados.
+- `pageProdutos.html`: Página dos produtos do site.
 
 ## Tecnologias Utilizadas
 
