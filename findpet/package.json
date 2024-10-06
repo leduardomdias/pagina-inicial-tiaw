@@ -1,0 +1,14 @@
+{
+  "name": "findpet",
+  "version": "1.0.0",
+  "description": "API para cadastro de animais",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "author": "Luís Eduardo Marques Dias",
+  "license": "ISC"
+}

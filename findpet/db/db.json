@@ -1,0 +1,12 @@
+{
+  "animais": [
+    {
+      "nome": "Ariel",
+      "tipo": "Cachorro",
+      "idade": "12",
+      "descricao": "123",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwyXeKDN29AmZgZPLS7n0Bepe8QmVappBwZCeA3XWEbWNdiDFB",
+      "id": 2
+    }
+  ]
+}
