@@ -37,6 +37,9 @@
         padding: 20px 0;
         margin-top: auto;
       }
+      #noText {
+        text-decoration: none;
+      }
     </style>
     <title>Cadastrar Pet - FindPet</title>
   </head>
@@ -50,23 +53,27 @@
               alt="Logo"
               width="50"
               height="50"
+              id="img"
               class="m-2 mx-2"
             />
           </a>
+
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
-                >
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Sobre</a>
@@ -80,17 +87,16 @@
                 >
               </li>
               <li class="nav-item d-flex align-items-center ms-4">
-                <a href="perfilDoUsuario.html" style="text-decoration: none">
+                <a href="perfilDoUsuario.html" id="noText">
                   <i class="bi bi-person-circle fs-4 text-success"></i>
                   <span class="ms-2 px-2 text-success">Usuário</span>
                 </a>
               </li>
             </ul>
             <div class="d-flex flex-column align-items-center">
-              <span class="navbar-text mb-2 px-3"
+              <span class="navbar-text mb-2"
                 >"Encontre seus amigos de volta"</span
               >
-            </div>
           </div>
         </div>
       </nav>
@@ -121,6 +127,26 @@
         <div class="mb-3">
           <label for="descricao" class="form-label">Descrição</label>
           <textarea class="form-control" id="descricao" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="regiao" class="form-label">Região do Pet</label>
+          <select class="form-select" id="regiao" required>
+            <option value="" disabled selected>Selecione a região</option>
+            <option value="Afonso Pena">Afonso Pena</option>
+            <option value="Anchieta">Anchieta</option>
+            <option value="Belvedere">Belvedere</option>
+            <option value="Buritis">Buritis</option>
+            <option value="Funcionários">Funcionários</option>
+            <option value="Lourdes">Lourdes</option>
+            <option value="Mangabeiras">Mangabeiras</option>
+            <option value="Nova Lima">Nova Lima</option>
+            <option value="Nova Serrana">Nova Serrana</option>
+            <option value="Pampulha">Pampulha</option>
+            <option value="Santo Antônio">Santo Antônio</option>
+            <option value="São Pedro">São Pedro</option>
+            <option value="Savassi">Savassi</option>
+            <option value="Serra">Serra</option>
+          </select>
         </div>
         <div class="mb-3">
           <label for="imagem" class="form-label">Imagem (Upload)</label>
@@ -164,6 +190,7 @@
           const descricao = document.getElementById("descricao").value;
           const imagem = document.getElementById("imagem").files[0];
           const imagemUrl = document.getElementById("imagem-url").value;
+          const regiao = document.getElementById("regiao").value; // Capturando a região
 
           const animalData = {
             nome: nome,
@@ -171,6 +198,7 @@
             idade: idade,
             descricao: descricao,
             imagem: imagem ? imagem.name : imagemUrl,
+            regiao: regiao, // Incluindo a região no objeto
           };
 
           fetch("http://localhost:3000/animais", {
@@ -184,19 +212,19 @@
             .then((data) => {
               console.log("Resposta do servidor:", data);
               document.getElementById("resultado").innerHTML = ` 
-                            <div class="alert alert-success" role="alert">
-                                Animal cadastrado com sucesso!
-                            </div>
-                        `;
+                        <div class="alert alert-success" role="alert">
+                            Animal cadastrado com sucesso!
+                        </div>
+                    `;
               document.getElementById("cadastro-animal").reset();
             })
             .catch((error) => {
               console.error("Erro:", error);
               document.getElementById("resultado").innerHTML = ` 
-                            <div class="alert alert-danger" role="alert">
-                                Ocorreu um erro ao cadastrar o animal.
-                            </div>
-                        `;
+                        <div class="alert alert-danger" role="alert">
+                            Ocorreu um erro ao cadastrar o animal.
+                        </div>
+                    `;
             });
         });
     </script>
