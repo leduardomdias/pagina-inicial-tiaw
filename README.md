@@ -49,7 +49,7 @@ Prepare-se para a jornada de encontrar seu pet! Aqui está o passo a passo:
 1. Clone o Repositório: Entre na missão e traga o projeto para sua máquina local!
 
 ```bash
-git clone https://github.com/marquesDevvv/pagina-inicial-tiaw.git
+git clone https://github.com/leduardomdias/pagina-inicial-tiaw.git
 ```
 2.  Navegue até o Diretório: Avance até o seu novo tesouro digital.
 
