@@ -40,7 +40,7 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 - **HTML5**: Estruturação da página.
 - **CSS3** (via Bootstrap): Estilização responsiva e design moderno.
 - **Bootstrap 5**: Framework CSS para design responsivo.
-- **JavaScript**: (Previsto para uso em funcionalidades dinâmicas futuras).
+- **JavaScript**: (Começou a ser implementado recentemente).
 
 ## Como Usar
 
