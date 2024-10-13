@@ -34,6 +34,7 @@ Esta página inicial oferece uma introdução ao site, onde o usuário pode nave
 - `perfilDoUsuario.html`: Página com as informações do perfil do usuário e seus pets cadastrados.
 - `pageProdutos.html`: Página dos produtos do site.
 - `panfleto.html`: Página para baixar um modelo de panfleto para divulgar pets desaparecidos.
+- `pagina de cada regiao.html`: Página do mapa de cada região.
 
 ## Tecnologias Utilizadas
 
