@@ -190,7 +190,7 @@
           const descricao = document.getElementById("descricao").value;
           const imagem = document.getElementById("imagem").files[0];
           const imagemUrl = document.getElementById("imagem-url").value;
-          const regiao = document.getElementById("regiao").value; // Capturando a região
+          const regiao = document.getElementById("regiao").value; 
 
           const animalData = {
             nome: nome,
@@ -198,7 +198,7 @@
             idade: idade,
             descricao: descricao,
             imagem: imagem ? imagem.name : imagemUrl,
-            regiao: regiao, // Incluindo a região no objeto
+            regiao: regiao, 
           };
 
           fetch("http://localhost:3000/animais", {
