@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FindPet - Afonso Pena</title>
+    <title>FindPet - Fórum</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <style>
         html, body {
             margin: 0;
@@ -49,7 +48,7 @@
             font-size: 0.9rem;
         }
         .btn-custom {
-            background-color: #1d8535;
+            background-color: #28a745;
             color: white;
             border: none;
             font-size: 0.875rem;
@@ -59,45 +58,39 @@
         }
         .btn-custom:hover {
             background-color: #218838;
-        }
-        .btn-custom:focus {
-            outline: none;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">
-        <img src="images/logo_findpet.png" alt="Logo" width="50" height="50" class="m-2 mx-3" />
-    </a>
-    <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon "></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link px-2 nav-link-home mx-2" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link px-2 mx-2" href="#">Sobre</a></li>
-            <li class="nav-item"><a class="nav-link px-2 mx-2" href="forumPage.html">Fórum</a></li>
-            <li class="nav-item"><a class="nav-link px-2 mx-2" href="pets.html">Meus Pets</a></li>
-        </ul>
-    </div>
-</nav>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo_findpet.png" alt="Logo" width="50" height="50" class="m-2 mx-3" />
+        </a>
+        <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link px-2 nav-link-home mx-2" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-2 mx-2" href="#">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link px-2 mx-2" href="forumPage.html">Fórum</a></li>
+                <li class="nav-item"><a class="nav-link px-2 mx-2" href="pets.html">Meus Pets</a></li>
+            </ul>
+        </div>
+    </nav>
 <div class="container mt-4">
     <h1 class="text-center">Fórum de Perguntas - FindPet</h1>
-    <p class="text-center">Faça perguntas sobre animais perdidos e ajude a comunidade!</p>
-
     <section id="new-question" class="my-5">
         <h2>Faça uma pergunta</h2>
-        <form id="questionForm" class="mb-4">
+        <form id="questionForm">
             <div class="mb-3">
                 <label for="questionTitle" class="form-label">Título da pergunta</label>
-                <input type="text" class="form-control" id="questionTitle" placeholder="Digite o título da sua pergunta" required>
+                <input type="text" class="form-control" id="questionTitle" required>
             </div>
             <div class="mb-3">
                 <label for="questionContent" class="form-label">Descrição</label>
-                <textarea class="form-control" id="questionContent" rows="3" placeholder="Digite sua pergunta" required></textarea>
+                <textarea class="form-control" id="questionContent" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn btn-success">Postar Pergunta</button>
         </form>
@@ -105,44 +98,64 @@
 
     <section id="forum-questions">
         <h2>Perguntas Recentes</h2>
-        <div id="questionsList" class="list-group">
-        </div>
+        <div id="questionsList" class="list-group"></div>
     </section>
 </div>
-
 <footer class="bg-dark text-light text-center p-4 mt-4">
     <div class="container">
         <p class="mb-1">Encontre animais desaparecidos na sua região.</p>
         <small>&copy; 2024 Todos os direitos reservados | PetFinder</small>
     </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    function loadQuestions() {
+        const questions = JSON.parse(localStorage.getItem('questions')) || [];
+        questions.forEach(renderQuestion);
+    }
+
+    function saveQuestions(questions) {
+        localStorage.setItem('questions', JSON.stringify(questions));
+    }
+
+    function renderQuestion(question) {
+        const questionHTML = `
+            <div class="list-group-item">
+                <h5 class="mb-1">${question.title}</h5>
+                <p>${question.content}</p>
+                <button class="btn btn-custom btn-sm m-2" onclick="showAnswerForm(this)">Respostas</button>
+                <div class="answer-section" style="display: none;">
+                    <form onsubmit="submitAnswer(event, this, ${question.id})">
+                        <div class="mb-2">
+                            <textarea class="form-control" placeholder="Digite sua resposta" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">Enviar Resposta</button>
+                    </form>
+                    <div class="answers-list mt-3">
+                        ${question.answers.map(answer => `<div class="answer-card">${answer}</div>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+        document.getElementById('questionsList').insertAdjacentHTML('beforeend', questionHTML);
+    }
+
     document.getElementById('questionForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
         const title = document.getElementById('questionTitle').value;
         const content = document.getElementById('questionContent').value;
 
-        const questionHTML = `
-            <div class="list-group-item">
-                <h5 class="mb-1">${title}</h5>
-                <p>${content}</p>
-                <button class="btn btn-custom btn-sm m-2" onclick="showAnswerForm(this)">Respostas</button>
-                <div class="answer-section" style="display: none;">
-                    <form onsubmit="submitAnswer(event, this)">
-                        <div class="mb-2">
-                            <textarea class="form-control" placeholder="Digite sua resposta" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-success btn-sm">Enviar Resposta</button>
-                    </form>
-                    <div class="answers-list mt-3"></div>
-                </div>
-            </div>
-        `;
+        const questions = JSON.parse(localStorage.getItem('questions')) || [];
+        const newQuestion = {
+            id: Date.now(),
+            title,
+            content,
+            answers: []
+        };
+        questions.push(newQuestion);
+        saveQuestions(questions);
 
-        document.getElementById('questionsList').insertAdjacentHTML('beforeend', questionHTML);
+        renderQuestion(newQuestion);
         document.getElementById('questionForm').reset();
     });
 
@@ -151,17 +164,26 @@
         answerSection.style.display = answerSection.style.display === 'none' ? 'block' : 'none';
     }
 
-    function submitAnswer(event, form) {
+    function submitAnswer(event, form, questionId) {
         event.preventDefault();
 
         const answerText = form.querySelector('textarea').value;
-        const answerHTML = `<div class="answer-card">${answerText}</div>`;
+        const questions = JSON.parse(localStorage.getItem('questions')) || [];
+        const question = questions.find(q => q.id === questionId);
 
-        const answersList = form.nextElementSibling;
-        answersList.insertAdjacentHTML('beforeend', answerHTML);
-        
-        form.reset();
+        if (question) {
+            question.answers.push(answerText);
+            saveQuestions(questions);
+
+            const answerHTML = `<div class="answer-card">${answerText}</div>`;
+            const answersList = form.nextElementSibling;
+            answersList.insertAdjacentHTML('beforeend', answerHTML);
+
+            form.reset();
+        }
     }
+
+    document.addEventListener('DOMContentLoaded', loadQuestions);
 </script>
 </body>
 </html>
